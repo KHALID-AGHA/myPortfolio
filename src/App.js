@@ -11,47 +11,57 @@ import { useContext, useEffect, useState } from 'react';
 import Footer from './Components/Footer';
 import { themeContext } from './Context/Context';
 import { BsArrowUpCircleFill } from 'react-icons/bs';
+import Project from './Components/Project';
+import ContactMe from './Components/ContactMe';
+import { Link } from 'react-scroll';
 
 function App() {
+
   //---------------Dark Mode
   const theme = useContext(themeContext)
   const darkMode = theme.state.darkMode
 
   //---------------Scroll To Top
-  const [showScroll, setShowScroll] = useState(false)
-  const checkScrollTop = () => {
-    if (window.pageYOffset > 400) {
-      setShowScroll(true)
-    } else if (window.pageYOffset <= 400) {
-      setShowScroll(false)
-    }
-  };
+  // const [showScroll, setShowScroll] = useState(false)
+  // const checkScrollTop = () => {
+  //   if (window.pageYOffset > 400) {
+  //     setShowScroll(true)
+  //   } else if (window.pageYOffset <= 400) {
+  //     setShowScroll(false)
+  //   }
+  // };
 
-  const scrollTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  // const scrollTop = () => {
+  //   window.scrollTo({ top: 0, behavior: 'smooth' });
+  // };
 
-  window.addEventListener('scroll', checkScrollTop)
+  // window.addEventListener('scroll', checkScrollTop)
 
   return (
     <div
-      className={`${darkMode ? 'bg-[black]' : ""} App  overflow-hidden py-2 px-14 bg-opacity-100`}
+      className={`${darkMode ? 'bg-[#121212]' : ""} App overflow-hidden  bg-opacity-100`}
     >
-      <main>
-        <Navbar />
+      <Navbar />
+      <main className='py-2 px-14 mt-20'>
+
         <Intro />
         <Skills />
         <Experience />
         <Works />
-        <Projects />
-        <Contact />
+        {/**<Projects /> */}
+        <Project />
+        <ContactMe />
         <Footer />
+        {/**
+  */}
       </main>
+      {/**
+      
       <BsArrowUpCircleFill
-        onClick={scrollTop}
-        color={`${darkMode ? "#F2DEBA" : '#242d49'}`}
-        className={`${showScroll ? 'flex' : "hidden"} scrollTop fixed z-[100000] opacity-50 w-10 h-10 bottom-5 right-5 cursor-pointer items-center hover:opacity-100`}
-      />
+          onClick={scrollTop}
+          color={`${darkMode ? "#F2DEBA" : '#242d49'}`}
+          className={`${showScroll ? 'flex' : "hidden"} scrollTop fixed z-[100000] opacity-50 w-10 h-10 bottom-5 right-5 cursor-pointer items-center hover:opacity-100`}
+        />*/}
     </div>
   );
 }

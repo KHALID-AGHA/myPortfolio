@@ -24,9 +24,23 @@ module.exports = {
       md: { max: "769px" },
       sm: { max: "479px" },
     },
+    keyframes: {
+      shake: {
+        '0% , 50%': { transform: ' translateY(-10%)' },
+        '50% , 100%': { transform: ' translateY(0%)' },
+      },
+    },
+    animation: {
+      'shaking-input': 'shake 1s ease-in-out 0s 1',
+    },
+    variants: {
+      extend: {
+        inset: ["group-hover"],
+      }
+    },
     extend: {},
   },
   plugins: [
-    require('tailwind-scrollbar'),
+    require('tailwind-scrollbar')({ nocompatible: true }),
   ],
 }

@@ -37,7 +37,7 @@ export default function Contact() {
     }
     //******************************EmailJS */
     return (
-        <div id="contact_section" name="contact_section" className='relative p-12 md:p-0 h-screen mb-20  flex flex-row justify-between items-center my-3 w-full md:flex-col'>
+        <div className='relative p-12 md:p-0 h-screen mb-20  flex flex-row justify-between items-center my-3 w-full md:flex-col'>
 
             {/**Blur div */}
             <div className='blurSection h-full 

@@ -12,7 +12,8 @@ import Buttons from '../Components/Shared/Buttons'
 import { FaExternalLinkAlt } from 'react-icons/fa'
 import { themeContext } from "../Context/Context";
 import { useContext } from "react";
-export default function Projects() {
+export default function Project() {
+
     const projectCards = [
         {
             id: 1, title: 'Ransom', link: "https://ransom-website.herokuapp.com/", description: "Website that makes it easier for people to anonymously send any type of feedback", Img: ransom,
@@ -95,64 +96,75 @@ export default function Projects() {
 
     return (
         <div name="projects_section" id="projects_section"
-            className='projects w-full h-screen md:h-auto flex flex-col md:mb-10  '>
-
+            className='projects w-full h-screen md:h-auto pt-10 flex flex-col  md:mb-10  '>
             {/********************************* Heading **********************************/}
             <CenterTitle Header1={"Recent Projects"} Header2={"Portfolio"} />
 
+            <span>Filter</span>
             {/********************************* Filer & Sort ********************************/}
+
             {/********************************* Projects Card ********************************/}
-            <section className="flex flex-row flex-wrap justify-center w-full rounded-md
-            max-h-full h-full md:h-screen md:pr-4 scrollbar scrollbar-thumb-black scrollbar-track-heavyTeal overflow-hidden "
+            <section className="flex flex-row gap-5 flex-wrap justify-center w-full rounded-md 
+            max-h-full h-full md:h-screen md:pr-5 scrollbar scrollbar-track-rounded-lg scrollbar-thumb-rounded-xl  scrollbar-thumb-black scrollbar-track-heavyTeal overflow-hidden "
             >
 
                 {projectCards.map((card) => (
-                    <div className="relative group w-[30%] md:w-full  m-1 h-96 overflow-hidden rounded-md
-                             bg-gradient-to-br from-heavyTeal via-heavyBeige to-lightTeal ">
+                    <div className="relative w-[30%] md:w-full h-96 flex flex-col items-center justify-between  ">
+                        <div className="group h-3/4 w-full mt-4 py-5 px-5 bg-[#f3f4f6] flex flex-row items-center justify-center rounded-2xl ">
 
-                        {/******************************* Tags ********************************* */}
-                        <div className="flex flex-row justify-around items-center my-1">
-                            {card.tags.map((tag) => (
+                            {/******************************* Tags ********************************* */}
+                            <div
+                                className="absolute z-40 w-full h-[75%] flex flex-row items-center justify-end rounded-lg
+                                transform duration-700 invisible
+                                group-hover:visible  group-hover:bg-[#9ebac0] group-hover:bg-opacity-50  ">
+                                <div className="w-full flex flex-row justify-around items-center my-1">
+                                    {card.tags.map((tag) => (
+                                        <span
+                                            className="mt-1 text-lightBeige bg-heavyTeal py-1 text-sm px-3 bg-orange-200 text-orange-800 rounded-full"
 
-                                <span key={tag.id} className="my-1 bg-lightBeige text-heavyTeal py-1 text-sm px-3 bg-orange-200 text-orange-800 rounded-full"
-                                >
-                                    #{tag.tag1}{tag.tag2}{tag.tag3}
-                                </span>
-                            ))}
+                                            key={tag.id}>#{tag.tag1}{tag.tag2}{tag.tag3}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/******************************* Image ********************************* */}
+                            <img className="object-cover w-[95%] h-[95%] rounded-lg " src={card.Img} />
+
                         </div>
 
+                        {/******************************* Title, Description & Link ********************************* */}
 
-                        {/******************************* To Hover *********************************  */}
-                        <div className="absolute  w-full h-full shadow-2xl opacity-20 transform duration-500 inset-y-full group-hover:-inset-y-0"></div>
-
-                        {/******************************* Title, Description & Button ********************************* */}
                         <div
-                            className="absolute w-full h-full bg-gradient-to-t from-black transform duration-500 inset-y-3/4 group-hover:-inset-y-0"
+                            className={`${darkMode ? 'border-2 border-heavyTeal rounded-md' : ""} px-5 py-5  shadow-2xl mt-4  overflow-hidden scrollbar h-[28%] w-full flex flex-col justify-between items-start`}
                         >
-
-                            {/******************************* Title *********************************  */}
-                            <div className="absolute w-full flex place-content-center ">
-                                <p className="capitalize font-bold text-3xl text-center shadow-2xl text-heavyTeal italic mt-10">{card.title}</p>
+                            <div className="flex flex-row justify-between items-center w-full">
+                                <h1 className="text-heavyTeal font-bold ">{card.title}</h1>
+                                <a href={card.link} target={"_blank"}>
+                                    <FaExternalLinkAlt cursor={'pointer'} color={'#0E5E6F'} />
+                                </a>
                             </div>
 
-                            {/******************************* Description *********************************  */}
-                            <div className="absolute w-full flex place-content-center mt-20">
-                                <p className="text-black font-bold text-center w-4/5 text-white mt-5">
-                                    {card.description}
-                                </p>
+                            <p className="text-lightTeal ">{card.description}</p>
+
+                            {/******************************* Tags ********************************* */}
+
+                            <div className="w-full flex flex-row justify-around items-center my-1">
+                                {card.tags.map((tag) => (
+                                    <span
+                                        className="mt-1 bg-lightBeige text-heavyTeal py-1 sm:text-xs text-sm px-3 bg-orange-200 text-orange-800 rounded-full"
+
+                                        key={tag.id}>#{tag.tag1}{tag.tag2}{tag.tag3}
+                                    </span>
+                                ))}
                             </div>
-
-                            {/******************************* Button *********************************  */}
-                            <a href={card.link} target={"_blank"} className="absolute flex flex-row justify-center  bottom-4 w-full">
-                                <Buttons Action={"Learn More"} />
-                            </a>
-
                         </div>
+
                     </div>
                 ))}
-
             </section>
-
         </div>
     )
-} 
+}
+
+
