@@ -10,14 +10,14 @@ export default function Toggle() {
     const darkMode = theme.state.darkMode
     const switchTheme = () => {
         theme.dispatch({ type: 'toggle' })
-        if (darkMode) {
-            localStorage.setItem('dark', 'OFF')
-            localStorage.removeItem('light',)
-        }
-        else if (!darkMode) {
-            localStorage.setItem('light', "OFF")
-            localStorage.removeItem('dark',)
-        }
+        // if (darkMode) {
+        //     localStorage.setItem('dark', 'OFF')
+        //     localStorage.removeItem('light',)
+        // }
+        // else if (!darkMode) {
+        //     localStorage.setItem('light', "OFF")
+        //     localStorage.removeItem('dark',)
+        // }
     }
     return (
         <div

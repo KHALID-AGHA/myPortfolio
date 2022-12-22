@@ -7,6 +7,7 @@ import { useContext, useEffect } from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Buttons from './Shared/Buttons';
+import { Link } from 'react-scroll';
 
 
 export default function Skills() {
@@ -39,21 +40,21 @@ export default function Skills() {
 
                 {/********************************* Left - CV **********************************/}
                 <div className='skills-CV my-2 md:w-full md:text-center'>
-                    <a href={'#projects_section'} >
+                    <Link spy={true} to="projects_section" smooth={true} activeClass="activeClass">
                         <Buttons Action={"examples"} />
-                    </a>
+                    </Link>
                 </div>
             </div>
 
             {/********************************* Right - Cards Side **********************************/}
             <div
-                className='skills-cards flex flex-row md:flex-col md:justify-between justify-around items-center w-1/2 md:w-full h-full '>
+                className='skills-cards  flex flex-row md:flex-col md:justify-between justify-around items-center w-1/2 md:w-full h-full '>
                 {cards.map((singlCard) => (
                     <div
                         data-aos="flip-right" data-aos-duration="2500"
                         key={singlCard.id}
                         className=" skills-single-card w-56 md:w-full h-auto flex flex-col gap-4 items-center text-center  bg-lightBeige border-[7px] border-lightTeal rounded-[20px] pt-2 pb-8 px-7 mx-2 text-heavyTeal my-2 ">
-                        <span className='skills-single-card  '>{singlCard.icon}</span>
+                        <span className='skills-single-card'>{singlCard.icon}</span>
                         <h1 className='skills-single-card font-bold'>{singlCard.title}</h1>
                         <p className='skills-single-card'>{singlCard.paragraph}</p>
                     </div>

@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
-import wave from '../img/wave.svg'
-import cheerful from '../img/cheerful.png'
+import logo from '../img/Logo.png'
 import { themeContext } from '../Context/Context'
 import { AiFillGithub, AiFillLinkedin, AiOutlineWhatsApp } from 'react-icons/ai';
-import { HiChevronDoubleUp } from 'react-icons/hi';
 import { CgChevronUp } from 'react-icons/cg';
 import { Link } from 'react-scroll';
+import { Context } from '../Context/LinksContext';
 
 export default function Footer() {
 
@@ -13,49 +12,63 @@ export default function Footer() {
     const theme = useContext(themeContext)
     const darkMode = theme.state.darkMode
 
+    const { navItem, setNavItem } = useContext(Context)
     return (
         <footer
             className={`${darkMode ? "border-t-2 border-t-heavyBeige" : ""}
-       relative p-4 bg-heavyTeal rounded-lg shadow-2xl shadow-heavyTeal -mx-20 -mb-2 h-32
+       relative py-4 bg-heavyTeal shadow-2xl shadow-heavyTeal  h-20 md:h-auto
         flex flex-row items-center justify-around md:flex-col
         `}
         >
+            {/* Image */}
+            <div className='w-1/3 flex flex-row items-center justify-center  md:hidden'>
+                <img src={logo} className="h-14 rounded-full bg-heavyBeige" alt="Logo" />
 
-            <div className="w-1/2 md:w-full flex items-center justify-around md:justify-center">
-                <img src={cheerful} className=" h-16 sm:h-8" alt="Cheerful" />
-                <span className="self-center text-xl sm:text-sm text-heavyBeige  italic font-semibold whitespace-nowrap  ">
+            </div>
+
+            {/* Name */}
+            <div className="w-1/3 md:w-full flex flex-row items-center justify-center md:mt-4 ">
+                <i className="self-center text-xl sm:text-sm text-heavyBeige font-semibold whitespace-nowrap  ">
                     ~ Mohammad Khalid kassem Agha ~
-                </span>
+                </i>
             </div>
 
-            <div className="w-1/2 h-auto md:w-full md:py-1 md:px-16 sm:px-10 flex items-center justify-around">
+            {/*Links & Icons */}
+            <div className="w-1/3 md:w-full flex flex-row items-center justify-center ">
+
                 <a
-                    className='hover:transform hover:transition-all hover:scale-125'
+                    className='hover:transform hover:transition-all hover:scale-125 mx-2'
                     href={'https://www.linkedin.com/in/khalid-agha/'} target='_blank' >
-                    <AiFillLinkedin size={40} color="F2DEBA" cursor={'pointer'}
+                    <AiFillLinkedin size={30} color="F2DEBA" cursor={'pointer'}
                     />
                 </a>
-                <a
-                    className='hover:transform hover:transition-all hover:scale-125'
-                    href={'https://github.com/KhalidAgha-2000'} target='_blank' >
-                    <AiFillGithub size={40} color="F2DEBA" cursor={'pointer'}
-                    />
-                </a>
-                <a
-                    className='hover:transform hover:transition-all hover:scale-125'
-                    href={'https://wa.me/0096176318263'} target='_blank' >
-                    <AiOutlineWhatsApp size={40} color="F2DEBA" cursor={'pointer'}
-                    />
-                </a>
-            </div>
-            <Link spy={true} to="home_section" smooth={true} activeClass="activeClass">
 
+                <a
+                    className='hover:transform hover:transition-all hover:scale-125 mx-2'
+                    href={'https://github.com/KhalidAgha-2000'} target='_blank' >
+                    <AiFillGithub size={30} color="F2DEBA" cursor={'pointer'}
+                    />
+                </a>
+
+                <a
+                    className='hover:transform hover:transition-all hover:scale-125 mx-2'
+                    href={'https://wa.me/0096176318263'} target='_blank' >
+                    <AiOutlineWhatsApp size={30} color="F2DEBA" cursor={'pointer'}
+                    />
+                </a>
+
+            </div>
+
+            {/* Back to top */}
+            <Link spy={true} to="home_section" smooth={true} activeClass="activeClass">
                 <CgChevronUp
+                    onClick={() => { setNavItem('home') }}
                     color='#242D49'
                     cursor='pointer'
                     size={30}
                     className="absolute right-1/2 left-1/2 -top-2 
-            border-t-2 border-heavyTeal bg-lightBeige rounded-full items-center hover:opacity-100"
+                    hover:transform hover:transition-all hover:scale-110  hover:opacity-100
+                    border-t-2 border-heavyTeal bg-lightBeige rounded-full "
                 />
             </Link>
         </footer>

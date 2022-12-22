@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from './Context/Context';
+import { NavProvider } from './Context/NavContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ThemeProvider>
-      <App />
+      <NavProvider>
+        <App />
+      </NavProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

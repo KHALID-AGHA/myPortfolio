@@ -32,8 +32,8 @@ export default function ContactMe() {
         user_message: '',
     });
     const sendEmail = (e) => {
-        e.preventDefault();
 
+        e.preventDefault();
         emailjs.sendForm('service_1jr2zwi', 'template_9sdqhvc', form.current, '-nja6vIqvlpT9R8kT')
             .then((result) => {
                 setSentsuccessfuly(true)
@@ -55,7 +55,7 @@ export default function ContactMe() {
 
     //******************************Contact Card  */
     const contactCard = [
-        { id: 1, title: "WhatsApp", linkTo: "https://wa.me/0096176318263", info: "+961 76 318 263", icon: <AiOutlineWhatsApp color='#3A8891' className=' h-full w-[15%] pl-1' size={40} /> },
+        { id: 1, title: "WhatsApp", linkTo: "https://wa.me/76318263", info: "+961 76 318 263", icon: <AiOutlineWhatsApp color='#3A8891' className=' h-full w-[15%] pl-1' size={40} /> },
         { id: 2, title: "LinkedIn", linkTo: "https://www.linkedin.com/in/khalid-agha/", info: "khalid-agha", icon: <AiOutlineLinkedin color='#3A8891' className=' h-full w-[15%] pl-1' size={40} /> },
         { id: 3, title: "DM", linkTo: "mkhalid.k.agha@gmail.com", info: "mkhalid.k.agha@gmail.com", icon: <MdAlternateEmail color='#3A8891' className=' h-full w-[15%] pl-1' size={40} /> },
     ]
@@ -75,7 +75,6 @@ export default function ContactMe() {
              blur-[30px] w-[10%] absolute left-0 top-0 -z-[1000] '>
             </div>
 
-
             {/********************************* Text Side **********************************/}
             <CenterTitle Header1={"Get in Touch"} Header2={"Contact ME"} />
 
@@ -86,36 +85,32 @@ export default function ContactMe() {
                     {contactCard.map((card) => (
 
                         <div
-                        className="
-                        group w-[45%] md:w-3/4 sm:w-full md:my-3 h-32 relative rounded-md shadow-xl border-b-2 border-l-2  border-l border-b border-lightTeal shadow-heavyTeal flex flex-row justify-between items-start  "
-                        data-aos= "flip-left"
-                        data-aos-easing= "ease-out-cubic"
-                        data-aos-duration="2000"
+                            className="group w-[45%] md:w-3/4 sm:w-full md:my-3 h-32 relative rounded-md shadow-xl border-b-2 border-l-2 border-lightTeal shadow-heavyTeal flex flex-row justify-between items-start"
+                            data-aos="flip-left"
+                            data-aos-easing="ease-out-cubic"
+                            data-aos-duration="2000"
                         >
-                     
-                        <a href={`${card.linkTo === "mkhalid.k.agha@gmail.com" ? " mailto:mkhalid.k.agha@gmail.com" : card.linkTo}`}
-                            target={'_blank'}>
-                            <FaExternalLinkAlt
-                                className='absolute top-0 right-0'
-                                color={`${darkMode ? "#F2DEBA" : "#0e5e6f"}`}
-                            />
-                        </a>
 
-                        {card.icon}
+                            <a href={`${card.linkTo === "mkhalid.k.agha@gmail.com" ? " mailto:mkhalid.k.agha@gmail.com" : card.linkTo}`}
+                                target={'_blank'}>
+                                <FaExternalLinkAlt
+                                    className='absolute top-0 right-0'
+                                    color={`${darkMode ? "#F2DEBA" : "#0e5e6f"}`}
+                                />
+                            </a>
 
-                        <div className=' w-[84%] h-full flex flex-col items-start justify-center p-1'>
-                            <h1 className='text-heavyTeal font-bold'>{card.title}</h1>
-                            <span className='text-lightTeal font-medium'>{card.info}</span>
+                            {card.icon}
+
+                            <div className=' w-[84%] h-full flex flex-col items-start justify-center p-1'>
+                                <h1 className='text-heavyTeal font-bold'>{card.title}</h1>
+                                <span className='text-lightTeal font-medium'>{card.info}</span>
+                            </div>
+
                         </div>
-
-                    </div> 
-                        
-
                     ))}
-        </div>
+                </div>
 
-
-                {/********************************* Form Side **********************************/ }
+                {/********************************* Form Side **********************************/}
                 <h1 className='hidden md:flex text-heavyTeal justify-center w-full h-auto '>Or you Send your request below</h1>
                 <div className='w-1/2 md:w-full h-full  md:h-1/2 p-3 flex flex-row justify-center  '>
                     <form
@@ -146,7 +141,6 @@ export default function ContactMe() {
                                 placeholder="khalid@gmail.com" required />
                         </div>
 
-
                         {/********************************* Message **********************************/}
                         <div className="mb-6">
                             <label for="message"
@@ -170,9 +164,8 @@ export default function ContactMe() {
                 </div>
             </section>
 
-
-        {/**Blur div */ }
-        <div className = 'blurSection h-1/2 m-auto 
+            {/**Blur div */}
+            <div className='blurSection h-1/2 m-auto 
     bg-gradient-to-tl from-heavyTeal via-blueCard to-lightBeige
     blur-[30px] w-[70%]  absolute right-10 bottom-0 -z-[1000]'>
             </div>

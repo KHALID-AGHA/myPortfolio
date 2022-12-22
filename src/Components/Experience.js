@@ -17,6 +17,7 @@ export default function Experience() {
         AOS.init();
         AOS.refresh();
     }, [])
+
     return (
         <div
             id='experiences_section' name="experiences_section"

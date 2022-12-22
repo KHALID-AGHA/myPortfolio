@@ -5,6 +5,7 @@ import Buttons from './Shared/Buttons'
 import RightTitle from './Shared/RightTitle'
 import AOS from "aos";
 import "aos/dist/aos.css";
+import KhalidAghaCV from '../KhalidAghaCV.pdf'
 import { useEffect } from 'react'
 
 export default function Works() {
@@ -19,7 +20,7 @@ export default function Works() {
         <div id="services_section" name="services_section"
             className='Works flex md:flex-col items-center h-screen md:h-auto my-10 relative '>
             <div className='blurSection h-3/4 md:hidden
-                            bg-gradient-to-tl 
+                            bg-gradient-to-tr   
                           from-[#70B0B8] via-blueCard to-lightBeige 
                             blur-[10px] w-[50%] m-auto absolute left-52 right-32 top-20 -z-[100px]'>
             </div>
@@ -33,12 +34,12 @@ export default function Works() {
                 />
 
                 <div className='works-CV pt-4 md:w-full md:text-center'>
-                    <a href={"#contact_section"}>
+                    <a href={KhalidAghaCV} download>
                         <Buttons Action={"download CV"} />
                     </a>
                 </div>
             </div>
-
+            
             {/********************************* Right - Circles **********************************/}
 
             <div className='works-circsls md:h-full flex flex-col justify-center items-center w-1/2 md:w-full h-full z-[40]  '>

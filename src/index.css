@@ -1,3 +1,87 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ****************************** Navbar links  */
+.navLi {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    color: #0E5E6F;
+    padding: 5px;
+    font-size: 18px;
+    line-height: 28px;
+    overflow: hidden;
+    transition: color 2s;
+}
+
+.navLi:hover {
+    color: #242D49;
+}
+
+.navLi::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px;
+    z-index: -1;
+    width: 125%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: #3A8891;
+    transform: scaleX(0) skewX(35deg);
+    transform-origin: left;
+    transition: transform 1s;
+}
+
+.navLi:hover::before {
+    transform: scaleX(1) skewX(35deg);
+}
+
+/* ****************************** Shared Buttons   */
+.Buttons {
+    position: relative;
+    border-radius: 9999px;
+    display: inline-block;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-width: 2px;
+    border-color: rgb(14 94 111);
+    color: rgb(14 94 111);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    transition-property: #3A8891;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.Buttons::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 9999px;
+    z-index: -1;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background-color: #3A8891;
+    transform: scaleX(0);
+    transform-origin: top;
+    transition: transform 1s;
+
+}
+
+.Buttons:hover::before {
+    transform: scaleX(1);
+}
+
+.Buttons:hover {
+    color: #FFEFD6;
+}
+ 

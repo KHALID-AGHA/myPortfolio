@@ -3,8 +3,7 @@ import cheerful from '../img/cheerful.png'
 import { AiFillGithub, AiFillLinkedin, AiOutlineWhatsApp } from 'react-icons/ai';
 import { SiMongodb, SiReact, SiExpress } from 'react-icons/si';
 import { FaNodeJs } from 'react-icons/fa';
-import { useContext, useEffect } from 'react'
-import { themeContext } from '../Context/Context'
+import { useEffect } from 'react'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import RightTitle from './Shared/RightTitle';
@@ -16,9 +15,6 @@ export default function Intro() {
         AOS.refresh();
     }, [])
 
-    //---------------Dark Mode
-    const theme = useContext(themeContext)
-    const darkMode = theme.state.darkMode
 
     return (
         <div name="home_section"
@@ -58,7 +54,7 @@ export default function Intro() {
                             color='#0E5E6F' size={50} cursor={'pointer'} />
                     </a>
 
-                    <a target={'_blank'} href='https://wa.me/0096176318263'
+                    <a target={'_blank'} href='https://wa.me/76318263'
                         className='hover:transform hover:transition-all hover:scale-125' >
                         <AiOutlineWhatsApp
                             data-aos-duration="1500" data-aos="zoom-in"
