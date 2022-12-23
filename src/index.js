@@ -5,15 +5,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from './Context/Context';
 import { NavProvider } from './Context/NavContext';
+import { ContextBody } from './Context/LinksContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <ContextBody>
     <ThemeProvider>
       <NavProvider>
         <App />
       </NavProvider>
     </ThemeProvider>
+    </ContextBody>
+
   </React.StrictMode>
 );
 

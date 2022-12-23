@@ -9,13 +9,13 @@ import { Context } from '../Context/LinksContext';
 export default function Footer() {
 
     //---------------Dark Mode
-    const theme = useContext(themeContext)
-    const darkMode = theme.state.darkMode
+    // const theme = useContext(themeContext)
+    // const darkMode = theme.state.darkMode
 
-    const { navItem, setNavItem } = useContext(Context)
+    const { navItem, setNavItem, theme, setTheme } = useContext(Context)
     return (
         <footer
-            className={`${darkMode ? "border-t-2 border-t-heavyBeige" : ""}
+            className={`${theme ? "border-t-2 border-t-heavyBeige" : ""}
        relative py-4 bg-heavyTeal shadow-2xl shadow-heavyTeal  h-20 md:h-auto
         flex flex-row items-center justify-around md:flex-col
         `}

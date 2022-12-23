@@ -21,16 +21,16 @@ export default function Works() {
             className='Works flex md:flex-col items-center h-screen md:h-auto my-10 relative '>
             <div className='blurSection h-3/4 md:hidden
                             bg-gradient-to-tr   
-                          from-[#70B0B8] via-blueCard to-lightBeige 
-                            blur-[10px] w-[50%] m-auto absolute left-52 right-32 top-20 -z-[100px]'>
+                          from-heavyTeal via-blueCard to-darkNavbar
+                            blur-[10px] w-[50%] m-auto absolute right-10 top-20 -z-[100px]'>
             </div>
 
             {/********************************* Left - Text Side **********************************/}
             <div className='works-text-side w-1/2 md:w-full flex flex-col justify-center h-[70vh] md:h-auto z-10 my-10'>
 
                 <RightTitle Header1={"Work for these"} Header2={"Brands & Clients"}
-                    Paragraph1={"As for my accomplishments, I have designed  projects related to web development that gave me the experience needed to work in this field."}
-                    Paragraph2={"As well as developing code writing and fixing errors ."}
+                    Paragraph1={"I have designed  projects related to web development that gave me the experience needed to work in this field."}
+                    
                 />
 
                 <div className='works-CV pt-4 md:w-full md:text-center'>
@@ -39,13 +39,13 @@ export default function Works() {
                     </a>
                 </div>
             </div>
-            
+
             {/********************************* Right - Circles **********************************/}
 
             <div className='works-circsls md:h-full flex flex-col justify-center items-center w-1/2 md:w-full h-full z-[40]  '>
                 <div className='w-[60%] h-[60%] sm:w-[100%] sm:h-[70%] flex flex-col items-center justify-between rounded-full 
                                  m-auto shadow-xl  shadow-heavyTeal bg-[white] 
-                                 bg-gradient-to-br from-heavyTeal via-blueCard to-lightBeige '
+                                 bg-gradient-to-br from-heavyTeal via-lightTeal to-lightBeige '
                 >
 
                     {/********************************* Single Circle **********************************/}

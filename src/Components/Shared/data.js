@@ -4,6 +4,30 @@ import erp from '../../img/Projects/erp.png'
 import km from '../../img/Projects/km.png'
 import food from '../../img/Projects/food.png'
 import ciel from '../../img/Projects/atelierenciel.png'
+import { BsBack, BsFront } from 'react-icons/bs'
+import { GiSkills } from 'react-icons/gi'
+
+//*************** Navbar Links */
+export const navigationLinks = [
+    { id: 0, navContextType: "skills", title: "Skills", linkTo: "skills_section" },
+    { id: 1, navContextType: "experiences", title: "Experiences", linkTo: "experiences_section" },
+    { id: 2, navContextType: "services", title: "Services", linkTo: "services_section" },
+    { id: 3, navContextType: "portfolio", title: "Portfolio", linkTo: "projects_section" },
+]
+
+//*************** Skills Cards */
+export const cards = [
+    { id: 2, title: "Front End", paragraph: "JavaScript, React, NextJS, HTML, CSS,TailwindCSS", icon: <BsFront color='#0E5E6F' size='40px' /> },
+    { id: 1, title: "Back End", paragraph: "NodeJs, Express, Laravel, MongoDB, MySQL", icon: <BsBack color='#0E5E6F' size='40px' /> },
+    { id: 3, title: "Other Skills", paragraph: "Linux, Git, AGILE Methodology, WordPress, Trello Board", icon: <GiSkills color='#0E5E6F' size='40px' /> },
+]
+
+//*************** Experience */
+export const myExperience = [
+    { id: 1, endNumber: 2, title01: 'Years', title02: 'Experience' },
+    { id: 2, endNumber: 9, title01: 'Completed', title02: 'Projects' },
+    { id: 3, endNumber: 3, title01: 'Companies', title02: 'Work' },
+]
 
 //*************** Filter Navigation */
 export const subfilterNavigation = [

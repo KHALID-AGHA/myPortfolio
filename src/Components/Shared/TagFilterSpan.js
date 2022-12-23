@@ -9,8 +9,7 @@ const TagFilterSpan = ({ className, onClick, text, key, tag1, tag2, tag3 }) => {
            before:m-auto before:w-full before:h-full before:bg-heavyTeal
            before:transform before:scale-x-0 before:transition-transform 
            hover:before:scale-x-100 
-           
-            `}
+           `}
             onClick={onClick}
             key={key}
         >

@@ -1,47 +1,36 @@
-import { BsBack, BsFront } from 'react-icons/bs';
-import { GiSkills } from 'react-icons/gi';
-import KhalidAghaCV from '../../src/KhalidAghaCV.pdf'
 import RightTitle from './Shared/RightTitle'
-import { themeContext } from '../Context/Context';
 import { useContext, useEffect } from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Buttons from './Shared/Buttons';
 import { Link } from 'react-scroll';
+import { cards } from './Shared/data';
+import { Context } from '../Context/LinksContext';
 
 
 export default function Skills() {
 
-    const cards = [
-        { id: 2, title: "Front End", paragraph: "JavaScript, React, NextJS, HTML, CSS,TailwindCSS", icon: <BsFront color='#0E5E6F' size='40px' /> },
-        { id: 1, title: "Back End", paragraph: "NodeJs, Express, Laravel, MongoDB, MySQL", icon: <BsBack color='#0E5E6F' size='40px' /> },
-        { id: 3, title: "Other Skills", paragraph: "Linux, Git, AGILE Methodology, WordPress, Trello Board", icon: <GiSkills color='#0E5E6F' size='40px' /> },
-    ]
-
     //---------------Dark Mode
-    const theme = useContext(themeContext)
-    const darkMode = theme.state.darkMode
+    const { theme,setNavItem } = useContext(Context)
+
     useEffect(() => {
         //---------------Animation
         AOS.init();
         AOS.refresh();
     }, [])
+
     return (
         <div id={'skills_section'} name="skills_section"
             className='skills flex md:flex-col pt-10  h-screen md:h-auto mt-40 md:mt-0 relative z-20'>
 
             {/********************************* Left - Text Side **********************************/}
-            {/**<span className='textSideSpans my-2 HeaderOne'>My Awesome</span>
-                <span className='textSideSpans my-2 HeaderTwo md:text-xl'>Skills</span>
-                <span className='textSideSpans my-2 Paragraph '>Front end, Back end, Server Management, Project Management, Content Management System. </span>
-                */}
             <div className='skills-text-side  w-1/2 md:w-full flex flex-col h-[70vh] '>
                 <RightTitle Header1={"My Awesome"} Header2={"Skills"} Paragraph1={"Front end, Back end, Server Management, Project Management, Content Management System."} />
 
                 {/********************************* Left - CV **********************************/}
                 <div className='skills-CV my-2 md:w-full md:text-center'>
                     <Link spy={true} to="projects_section" smooth={true} activeClass="activeClass">
-                        <Buttons Action={"examples"} />
+                        <Buttons onClick={()=>{setNavItem('portfolio')}} Action={"examples"} />
                     </Link>
                 </div>
             </div>
@@ -62,11 +51,11 @@ export default function Skills() {
             </div>
             {/********************************* Blur **********************************/}
             <div
-                className={`${darkMode ? 'hidden' : ""} 
+                className={`${!theme ? 'hidden' : ""} 
                         blurSection h-full md:hidden
-                        bg-gradient-to-tl 
-                        from-[#70B0B8] via-blueCard to-lightBeige 
-                        blur-[10px] w-[70%] m-auto absolute right-28 top-64 -z-20
+                        bg-gradient-to-br
+                        from-heavyTeal via-lightNavbar to-heavyTeal 
+                        blur-[10px] w-[70%] m-auto absolute right-28 top-72 -z-20
                     `}
             ></div>
         </div>

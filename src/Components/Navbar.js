@@ -4,40 +4,21 @@ import KhalidLogo1 from '../img/Logo.png'
 import Buttons from './Shared/Buttons'
 import { Link } from 'react-scroll'
 import { useContext } from 'react'
-import { navContext } from '../Context/NavContext'
 import { Context } from '../Context/LinksContext'
-
+import { navigationLinks } from '../Components/Shared/data'
 export default function Navbar() {
-    //---------Navbar Links
-    const navigationLinks = [
-        { id: 0, navContextType: "skills", title: "Skills", linkTo: "skills_section" },
-        { id: 1, navContextType: "experiences", title: "Experiences", linkTo: "experiences_section" },
-        { id: 2, navContextType: "services", title: "Services", linkTo: "services_section" },
-        { id: 3, navContextType: "portfolio", title: "Portfolio", linkTo: "projects_section" },
-    ]
-    const nav = useContext(navContext)
-    // const navItem = nav.state.navItem
 
-    const switchLink = (navContextType) => {
-        nav.dispatch({ type: navContextType })
-        // console.log({ 'nav': navItem })
-    }
-
-    const { navItem, setNavItem } = useContext(Context)
-
-
-    useEffect(() => {
-        console.log('nav', navItem);
-    }, [])
+    //************ Nav Item style on click  && Dark Mode
+    const { navItem, setNavItem, theme, setTheme } = useContext(Context)
 
     return (
-        //bg-gradient-to-tl from-heavyTeal via-blueCard to-black
+
         <div
             name="navbar"
             id='navbar'
-            className='navbar-wrapper 
-             text-heavyTeal fixed top-0 z-[99999] h-14 w-full shadow-2xl shadow-lightTeal rounded-bl-xl rounded-br-xl  
-            flex flex-row justify-evenly items-center bg-[#e2e8f0] border-b-2 border-heavyTeal'
+            className={`${theme ? "bg-darkNavbar" : "bg-lightNavbar"} first-letter:navbar-wrapper 
+            text-heavyTeal fixed top-0 z-[99999] h-14 w-full shadow-2xl shadow-lightTeal rounded-bl-xl rounded-br-xl  
+           flex flex-row justify-evenly items-center  border-b-2 border-heavyTeal'}`}
         >
 
             {/*********************************Logo **********************************/}
