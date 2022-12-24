@@ -7,7 +7,7 @@
     cursor: pointer;
     position: relative;
     display: inline-block;
-    color: #0E5E6F;
+    color: #242D49;
     padding: 5px;
     font-size: 18px;
     line-height: 28px;
@@ -15,9 +15,6 @@
     transition: color 2s;
 }
 
-.navLi:hover {
-    color: #242D49;
-}
 
 .navLi::before {
     content: "";
@@ -84,4 +81,3 @@
 .Buttons:hover {
     color: #FFEFD6;
 }
- 

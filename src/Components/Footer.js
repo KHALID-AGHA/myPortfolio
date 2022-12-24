@@ -1,18 +1,15 @@
 import React, { useContext } from 'react'
 import logo from '../img/Logo.png'
-import { themeContext } from '../Context/Context'
 import { AiFillGithub, AiFillLinkedin, AiOutlineWhatsApp } from 'react-icons/ai';
 import { CgChevronUp } from 'react-icons/cg';
 import { Link } from 'react-scroll';
-import { Context } from '../Context/LinksContext';
+import { Context } from '../Context/Context';
 
 export default function Footer() {
 
     //---------------Dark Mode
-    // const theme = useContext(themeContext)
-    // const darkMode = theme.state.darkMode
+    const { setNavItem, theme } = useContext(Context)
 
-    const { navItem, setNavItem, theme, setTheme } = useContext(Context)
     return (
         <footer
             className={`${theme ? "border-t-2 border-t-heavyBeige" : ""}
@@ -66,7 +63,7 @@ export default function Footer() {
                     color='#242D49'
                     cursor='pointer'
                     size={30}
-                    className="absolute right-1/2 left-1/2 -top-2 
+                    className="absolute left-1/2 -top-2 
                     hover:transform hover:transition-all hover:scale-110  hover:opacity-100
                     border-t-2 border-heavyTeal bg-lightBeige rounded-full "
                 />

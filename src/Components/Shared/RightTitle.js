@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { themeContext } from '../../Context/Context'
-import { Context } from '../../Context/LinksContext'
+import { Context } from '../../Context/Context'
 
 const RightTitle = ({ Header1, Header2, Paragraph1, Paragraph2 }) => {
 
@@ -16,7 +16,7 @@ const RightTitle = ({ Header1, Header2, Paragraph1, Paragraph2 }) => {
                 {Header1}
             </span>
             <span
-                className={`${theme ? "text-[#9ebac0]" : ""} HeaderTwo py-1 text-heavyTeal font-bold text-4xl md:text-xl`}
+                className={`${theme ? "text-darkTitle" : ""} HeaderTwo py-1 text-heavyTeal font-bold text-4xl md:text-xl`}
             >
                 {Header2}
             </span>

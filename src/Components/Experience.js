@@ -5,7 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useContext, useEffect } from 'react';
 import { myExperience } from './Shared/data';
-import { Context } from '../Context/LinksContext';
+import { Context } from '../Context/Context';
 
 export default function Experience() {
 
@@ -15,6 +15,7 @@ export default function Experience() {
         AOS.refresh();
     }, [])
 
+    //---------------Dark Mode
     const { theme } = useContext(Context)
 
     return (

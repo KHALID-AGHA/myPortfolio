@@ -1,26 +1,10 @@
-
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
-import { themeContext } from '../Context/Context';
-import { Context } from '../Context/LinksContext';
+import { Context } from '../Context/Context';
 
 export default function Toggle() {
 
     //---------------Dark Mode
-    // const theme = useContext(themeContext)
-    // const darkMode = theme.state.darkMode
-    // const switchTheme = () => {
-    //     theme.dispatch({ type: 'toggle' })
-    //     // if (darkMode) {
-    //     //     localStorage.setItem('dark', 'OFF')
-    //     //     localStorage.removeItem('light',)
-    //     // }
-    //     // else if (!darkMode) {
-    //     //     localStorage.setItem('light', "OFF")
-    //     //     localStorage.removeItem('dark',)
-    //     // }
-    // }
-
     const { theme, setTheme } = useContext(Context)
 
     return (
@@ -32,8 +16,7 @@ export default function Toggle() {
                     color='#0E5E6F' width={5} height={4} />
                     :
                     <BsFillSunFill cursor={'pointer'} onClick={() => { setTheme(!theme) }}
-                        // className="toogleIcons w-8 h-4"
-                        className={`${theme ? "" : ""} toogleIcons w-8 h-4`}
+                        className="toogleIcons w-8 h-4"
                     />
             }
         </div>

@@ -1,4 +1,3 @@
-
 const TagFilterSpan = ({ className, onClick, text, key, tag1, tag2, tag3 }) => {
     return (
         <span
@@ -17,6 +16,5 @@ const TagFilterSpan = ({ className, onClick, text, key, tag1, tag2, tag3 }) => {
             {tag1}{tag2}{tag3}
         </span>
     )
-    // TagFilterSpan
 }
 export default TagFilterSpan

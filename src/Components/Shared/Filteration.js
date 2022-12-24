@@ -1,12 +1,17 @@
 import TagFilterSpan from "./TagFilterSpan";
 import { subfilterNavigation } from "./data";
+import { useContext } from "react";
+import { Context } from "../../Context/Context";
 
 const Filteration = (props) => {
+
+    //-------------- Dark Mode
+    const { theme } = useContext(Context)
 
     return (
         <div>
             <div
-                className='flex flex-row justify-evenly flex-wrap items-center w-[55%] rounded-lg bg-[#9ebac0] m-auto md:h-auto md:w-full h-12 my-2 '>
+                className={`${theme ? "bg-darkFilter" : "bg-darkTitle"} flex flex-row justify-evenly flex-wrap items-center w-[55%] rounded-lg bg-darkTitle m-auto md:h-auto md:w-full h-12 my-2 `}>
                 {subfilterNavigation
                     .map((sub) => (
 
@@ -20,7 +25,7 @@ const Filteration = (props) => {
                     ))}
             </div>
 
-        </div>
+        </div >
     )
 }
 export default Filteration;

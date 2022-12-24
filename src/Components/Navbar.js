@@ -4,12 +4,12 @@ import KhalidLogo1 from '../img/Logo.png'
 import Buttons from './Shared/Buttons'
 import { Link } from 'react-scroll'
 import { useContext } from 'react'
-import { Context } from '../Context/LinksContext'
+import { Context } from '../Context/Context'
 import { navigationLinks } from '../Components/Shared/data'
 export default function Navbar() {
 
     //************ Nav Item style on click  && Dark Mode
-    const { navItem, setNavItem, theme, setTheme } = useContext(Context)
+    const { navItem, setNavItem, theme } = useContext(Context)
 
     return (
 
@@ -38,8 +38,7 @@ export default function Navbar() {
                         <Link spy={true} to={link.linkTo} smooth={true} activeClass="active">
                             <li
                                 onClick={() => { setNavItem(link.navContextType) }}
-                                // onClick={() => { switchLink(link.navContextType) }}
-                                className={`${navItem === link.navContextType ? 'bg-lightTeal rounded-bl-2xl rounded-tr-2xl text-black' : ""} navLi `}
+                                className={`${navItem === link.navContextType ? 'bg-lightTeal rounded-bl-2xl rounded-tr-2xl text-[red]' : ""} navLi  `}
                                 key={link.id}
                             >
                                 {link.title}

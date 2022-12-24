@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 import Buttons from './Shared/Buttons';
 import { Link } from 'react-scroll';
 import { cards } from './Shared/data';
-import { Context } from '../Context/LinksContext';
+import { Context } from '../Context/Context';
 
 
 export default function Skills() {

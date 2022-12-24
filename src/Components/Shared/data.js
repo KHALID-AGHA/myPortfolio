@@ -6,6 +6,8 @@ import food from '../../img/Projects/food.png'
 import ciel from '../../img/Projects/atelierenciel.png'
 import { BsBack, BsFront } from 'react-icons/bs'
 import { GiSkills } from 'react-icons/gi'
+import { AiOutlineLinkedin, AiOutlineWhatsApp } from 'react-icons/ai'
+import { MdAlternateEmail } from 'react-icons/md'
 
 //*************** Navbar Links */
 export const navigationLinks = [
@@ -68,5 +70,12 @@ export const projectCards = [
         id: 6, title: 'Atelierenciel', category: "bootcamp", hosted: 'wordpress', date: 3, link: "https://atelierenciel.com/", description: "Online store sells hand painting (wearable andaccessories) products", Img: ciel,
         tags: [{ id: 1, tag1: "#WordPress" }, { id: 2, tag2: "#E-commerce" }, { id: 3, tag3: "#Codi" }],
     },
+]
+
+//*************** Contact Links*/
+export const contactCard = [
+    { id: 1, title: "WhatsApp", linkTo: "https://wa.me/76318263", info: "+961 76 318 263", icon: <AiOutlineWhatsApp color='#3A8891' className=' h-full w-[15%] pl-1' size={40} /> },
+    { id: 2, title: "LinkedIn", linkTo: "https://www.linkedin.com/in/khalid-agha/", info: "khalid-agha", icon: <AiOutlineLinkedin color='#3A8891' className=' h-full w-[15%] pl-1' size={40} /> },
+    { id: 3, title: "DM", linkTo: "mkhalid.k.agha@gmail.com", info: "mkhalid.k.agha@gmail.com", icon: <MdAlternateEmail color='#3A8891' className=' h-full w-[15%] pl-1' size={40} /> },
 ]
 

@@ -1,23 +1,23 @@
-import { createContext, useReducer } from 'react'
+import React, { createContext, useState } from 'react'
+export const Context = createContext()
 
-export const themeContext = createContext();
+export const ContextBody = ({ children }) => {
+    //-------------- Navbar Items
+    const [navItem, setNavItem] = useState('home')
 
-const initialState = { darkMode: false }
+    //-------------- Theme
+    const [theme, setTheme] = useState(false)
 
-const themeReducer = (state, action) => {
-    switch (action.type) {
-        case 'toggle':
-            return { darkMode: !state.darkMode };
-        default:
-            return state;
-    }
-}
-
-export const ThemeProvider = (props) => {
-    const [state, dispatch] = useReducer(themeReducer, initialState);
     return (
-        <themeContext.Provider value={{ state, dispatch }}>
-            {props.children}
-        </themeContext.Provider>
-    );
+        <Context.Provider
+            value={{
+                navItem,
+                setNavItem,
+                theme,
+                setTheme,
+            }}
+        >
+            {children}
+        </Context.Provider>
+    )
 }

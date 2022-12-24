@@ -2,13 +2,11 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import CenterTitle from './Shared/CenterTitle';
 import Buttons from './Shared/Buttons';
-import { BsFillChatRightTextFill } from 'react-icons/bs'
-import { AiFillMessage, AiOutlineLinkedin, AiOutlineWhatsApp } from 'react-icons/ai'
-import { MdAlternateEmail } from 'react-icons/md'
 import { FaExternalLinkAlt, } from 'react-icons/fa'
-import { themeContext } from '../Context/Context';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { contactCard } from './Shared/data';
+import { Context } from '../Context/Context';
 
 export default function ContactMe() {
 
@@ -51,18 +49,9 @@ export default function ContactMe() {
             [e.target.name]: e.target.value
         }))
     }
-    //******************************EmailJS */
-
-    //******************************Contact Card  */
-    const contactCard = [
-        { id: 1, title: "WhatsApp", linkTo: "https://wa.me/76318263", info: "+961 76 318 263", icon: <AiOutlineWhatsApp color='#3A8891' className=' h-full w-[15%] pl-1' size={40} /> },
-        { id: 2, title: "LinkedIn", linkTo: "https://www.linkedin.com/in/khalid-agha/", info: "khalid-agha", icon: <AiOutlineLinkedin color='#3A8891' className=' h-full w-[15%] pl-1' size={40} /> },
-        { id: 3, title: "DM", linkTo: "mkhalid.k.agha@gmail.com", info: "mkhalid.k.agha@gmail.com", icon: <MdAlternateEmail color='#3A8891' className=' h-full w-[15%] pl-1' size={40} /> },
-    ]
 
     //---------------Dark Mode
-    const theme = useContext(themeContext)
-    const darkMode = theme.state.darkMode
+    const { theme } = useContext(Context)
 
     return (
         <div
@@ -95,7 +84,7 @@ export default function ContactMe() {
                                 target={'_blank'}>
                                 <FaExternalLinkAlt
                                     className='absolute top-0 right-0'
-                                    color={`${darkMode ? "#F2DEBA" : "#0e5e6f"}`}
+                                    color={`${theme ? "#F2DEBA" : "#0e5e6f"}`}
                                 />
                             </a>
 
@@ -111,7 +100,7 @@ export default function ContactMe() {
                 </div>
 
                 {/********************************* Form Side **********************************/}
-                <h1 className='hidden md:flex text-heavyTeal justify-center w-full h-auto '>Or you Send your request below</h1>
+                <h1 className='hidden md:flex text-heavyTeal justify-center w-full h-auto  my-6'>Or Send your request below</h1>
                 <div className='w-1/2 md:w-full h-full  md:h-1/2 p-3 flex flex-row justify-center  '>
                     <form
                         ref={form} onSubmit={sendEmail}
@@ -123,10 +112,9 @@ export default function ContactMe() {
                                 className="block mb-2 text-sm font-bold italic text-heavyTeal">
                                 Your Name
                             </label>
-                            <input name='user_name' onChange={handleChange} id="contact_name" type={"text"}
-                                className="shadow-sm  border border-heavyTeal text-heavyTeal text-sm rounded-lg focus:ring-heavyTeal focus:border-heavyTeal block 
-                            w-full p-2.5 placeholder:text-lightTeal outline-heavyTeal"
-                                placeholder="Khalid Agha" required />
+                            <input name='user_name' onChange={handleChange} id="contact_name" type={"text"} placeholder="Khalid Agha" required
+                                className={`${theme ? "bg-darkApp" : "bg-[#ffffff]"} shadow-sm border border-heavyTeal text-heavyTeal text-sm rounded-lg focus:ring-heavyTeal focus:border-heavyTeal block w-full p-2.5 placeholder:text-lightTeal outline-heavyTeal`}
+                            />
                         </div>
 
                         {/********************************* Email **********************************/}
@@ -135,10 +123,9 @@ export default function ContactMe() {
                                 className="block mb-2 text-sm font-bold italic text-heavyTeal">
                                 Your Email
                             </label>
-                            <input name='user_email' onChange={handleChange} id="contact_email" type={"email"}
-                                className="shadow-sm  border border-heavyTeal text-heavyTeal text-sm rounded-lg focus:ring-heavyTeal focus:border-heavyTeal block 
-                                            w-full p-2.5 placeholder:text-lightTeal outline-heavyTeal"
-                                placeholder="khalid@gmail.com" required />
+                            <input name='user_email' onChange={handleChange} id="contact_email" type={"email"} placeholder="khalid@gmail.com" required
+                                className={`${theme ? "bg-darkApp" : "bg-[#ffffff]"} shadow-sm border border-heavyTeal text-heavyTeal text-sm rounded-lg focus:ring-heavyTeal focus:border-heavyTeal block w-full p-2.5 placeholder:text-lightTeal outline-heavyTeal`}
+                            />
                         </div>
 
                         {/********************************* Message **********************************/}
@@ -147,16 +134,15 @@ export default function ContactMe() {
                                 className="block mb-2 text-sm font-bold italic text-heavyTeal">
                                 Your message
                             </label>
-                            <textarea name='user_message' onChange={handleChange} id="contact_message" rows="4"
-                                className="block p-2.5 w-full text-sm text-heavyTeal rounded-lg border 
-                                         border-heavyTeal focus:ring-heavyTeal focus:border-heavyTeal placeholder:text-lightTeal outline-heavyTeal"
-                                placeholder="Leave a comment..." required />
+                            <textarea name='user_message' onChange={handleChange} id="contact_message" rows="4" placeholder="Leave a comment..." required
+                                className={`${theme ? "bg-darkApp" : "bg-[#ffffff]"} block  resize-none p-2.5 w-full text-sm text-heavyTeal rounded-lg border border-heavyTeal focus:ring-heavyTeal focus:border-heavyTeal placeholder:text-lightTeal outline-heavyTeal`}
+                            />
                         </div>
 
                         {/********************************* Submit **********************************/}
                         <Buttons Action={"Submit"} />
 
-                        <span className='text-heavyTeal '>
+                        <span className='text-heavyTeal'>
                             {sentsuccessfuly && "Thanks- Your message was sent successfuly"}
                         </span>
 
