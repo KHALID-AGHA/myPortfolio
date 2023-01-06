@@ -47,7 +47,7 @@ export const subfilterNavigation = [
 
 export const projectCards = [
     {
-        id: 1, title: 'Ransom', category: "bootcamp", hosted: 'heroku', date: 1, link: "https://ransom-website.herokuapp.com/", description: "Website that makes it easier for people to anonymously send any type of feedback", Img: ransom,
+        id: 1, title: 'Ransom', category: "bootcamp", hosted: 'heroku', date: 1, link: "https://ransom-website.vercel.app/", description: "Website that makes it easier for people to anonymously send any type of feedback", Img: ransom,
         tags: [{ id: 1, tag1: "#MERN" }, { id: 2, tag2: "#Codi" }],
     },
     {
