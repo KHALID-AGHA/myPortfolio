@@ -2,6 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.load {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, transparent, transparent 54%, #3A8891);
+    animation: animate 1s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0);
+        filter: hue-rotate(0);
+    }
+
+    0% {
+        transform: rotate(300deg);
+        filter: hue-rotate(300deg);
+    }
+}
+
+.load::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: #3A8891;
+    border-radius: 50%;
+    z-index: 1000;
+
+}
+
+.load::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, transparent 54%, #3A8891);
+    border-radius: 50%;
+    z-index: 1000;
+    filter: blur(20px);
+}
+
 /* ****************************** Navbar links  */
 .navLi {
     cursor: pointer;

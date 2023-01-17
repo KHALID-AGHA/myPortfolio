@@ -23,19 +23,22 @@ function App() {
       <Navbar />
       <main className='py-2 px-14 mt-20'>
 
+        {/* <div className='load'></div> */}
+
         <Intro />
         <Skills />
         <Experience />
         <Works />
-         <Project />
+        <Project />
         <ContactMe />
 
       </main>
+
       <Footer />
 
     </div>
 
-);
+  );
 }
 
 export default App;
