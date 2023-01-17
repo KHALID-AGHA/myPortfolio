@@ -51,7 +51,9 @@ export default function Project() {
                         else if (filterNavState === 'All Projects') { return val }
                     })
                     .map((card) => (
-                        <div className="relative w-[30%] md:w-full h-96 flex flex-col items-center justify-between  ">
+                        <div
+                        key={card.id}
+                        className="relative w-[30%] md:w-full h-96 flex flex-col items-center justify-between  ">
                             <div className="group h-3/4 w-full mt-4 py-5 px-5 bg-[transparent] flex flex-row items-center justify-center rounded-2xl ">
 
                                 {/******************************* Tags ********************************* */}

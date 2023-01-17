@@ -74,6 +74,7 @@ export default function ContactMe() {
                     {contactCard.map((card) => (
 
                         <div
+                            key={card.id}
                             className="group w-[45%] md:w-3/4 sm:w-full md:my-3 h-32 relative rounded-md shadow-xl border-b-2 border-l-2 border-lightTeal shadow-heavyTeal flex flex-row justify-between items-start"
                             data-aos="flip-left"
                             data-aos-easing="ease-out-cubic"
@@ -108,7 +109,7 @@ export default function ContactMe() {
 
                         {/********************************* Name **********************************/}
                         <div className="mb-6">
-                            <label for="name"
+                            <label htmlFor='name'
                                 className="block mb-2 text-sm font-bold italic text-heavyTeal">
                                 Your Name
                             </label>
@@ -119,7 +120,7 @@ export default function ContactMe() {
 
                         {/********************************* Email **********************************/}
                         <div className="mb-6">
-                            <label for="email"
+                            <label htmlFor="email"
                                 className="block mb-2 text-sm font-bold italic text-heavyTeal">
                                 Your Email
                             </label>
@@ -130,7 +131,7 @@ export default function ContactMe() {
 
                         {/********************************* Message **********************************/}
                         <div className="mb-6">
-                            <label for="message"
+                            <label htmlFor="message"
                                 className="block mb-2 text-sm font-bold italic text-heavyTeal">
                                 Your message
                             </label>

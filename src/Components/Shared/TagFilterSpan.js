@@ -1,4 +1,4 @@
-const TagFilterSpan = ({ className, onClick, text, key, tag1, tag2, tag3 }) => {
+const TagFilterSpan = ({ className, onClick, text,  tag1, tag2, tag3 }) => {
     return (
         <span
             className={`${className} 
@@ -10,7 +10,6 @@ const TagFilterSpan = ({ className, onClick, text, key, tag1, tag2, tag3 }) => {
            hover:before:scale-x-100 
            `}
             onClick={onClick}
-            key={key}
         >
             {text}
             {tag1}{tag2}{tag3}

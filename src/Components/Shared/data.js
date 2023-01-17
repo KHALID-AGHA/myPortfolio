@@ -33,13 +33,12 @@ export const myExperience = [
 
 //*************** Filter Navigation */
 export const subfilterNavigation = [
-    { id: 1, title: "All Projects", target: "all" },
-    { id: 2, title: "internship", target: "field" },
-    { id: 3, title: "bootcamp", target: "field" },
-    { id: 4, title: "heroku", target: "hosted" },
-    { id: 5, title: "vercel", target: "hosted" },
-    { id: 6, title: "wordpress", target: "hosted" },
-    { id: 7, title: "demo", target: "hosted" },
+    { id: 1, title: "All Projects", },
+    { id: 2, title: "internship", },
+    { id: 3, title: "bootcamp", },
+    { id: 4, title: "deployed", },
+    { id: 5, title: "wordpress", },
+    { id: 6, title: "demo", },
 ]
 
 
@@ -47,11 +46,11 @@ export const subfilterNavigation = [
 
 export const projectCards = [
     {
-        id: 1, title: 'Ransom', category: "bootcamp", hosted: 'heroku', date: 1, link: "https://ransom-website.vercel.app/", description: "Website that makes it easier for people to anonymously send any type of feedback", Img: ransom,
+        id: 1, title: 'Ransom', category: "bootcamp", hosted: 'deployed', date: 1, link: "https://ransom-website.vercel.app/", description: "Website that makes it easier for people to anonymously send any type of feedback", Img: ransom,
         tags: [{ id: 1, tag1: "#MERN" }, { id: 2, tag2: "#Codi" }],
     },
     {
-        id: 2, title: 'Area-Service', category: "bootcamp", hosted: 'vercel', date: 6, link: "https://area-service.vercel.app/", description: "A website that helps professionals who do not work from an office, or cannot afford one, and people who are searching for a provider near them.", Img: area,
+        id: 2, title: 'Area-Service', category: "bootcamp", hosted: 'deployed', date: 6, link: "https://area-service.vercel.app/", description: "A website that helps professionals who do not work from an office, or cannot afford one, and people who are searching for a provider near them.", Img: area,
         tags: [{ id: 1, tag1: "#NextJS" }, { id: 2, tag2: "#NodeJS" }, { id: 3, tag3: "#Codi" }],
     },
     {
@@ -59,11 +58,11 @@ export const projectCards = [
         tags: [{ id: 1, tag1: "#React" }, { id: 2, tag2: "#Laravel" }, { id: 3, tag3: "#Codi" }],
     },
     {
-        id: 4, title: 'KM-almajdal', category: "internship", hosted: 'vercel', date: 5, link: "https://kmalmajdal-tailwindcss.vercel.app/", description: "FrontEnd Part of project using NextJS & TailwindCSS styling", Img: km,
+        id: 4, title: 'KM-almajdal', category: "internship", hosted: 'deployed', date: 5, link: "https://kmalmajdal-tailwindcss.vercel.app/", description: "FrontEnd Part of project using NextJS & TailwindCSS styling", Img: km,
         tags: [{ id: 1, tag1: "#NextJS" }, { id: 2, tag2: "#TailwindCSS" }, { id: 3, tag3: "#DAS360" }],
     },
     {
-        id: 5, title: 'Foodoption', category: "internship", hosted: 'vercel', date: 4, link: "https://foodoption-with-tailwindcss.vercel.app/", description: "FrontEnd Part of project using NextJS & TailwindCSS styling", Img: food,
+        id: 5, title: 'Foodoption', category: "internship", hosted: 'deployed', date: 4, link: "https://foodoption-with-tailwindcss.vercel.app/", description: "FrontEnd Part of project using NextJS & TailwindCSS styling", Img: food,
         tags: [{ id: 1, tag1: "#NextJS" }, { id: 2, tag2: "#TailwindCSS" }, { id: 3, tag3: "#DAS360" }],
     },
     {

@@ -31,7 +31,7 @@ export default function Experience() {
             <div className='w-full justify-around flex flex-row md:flex-col'>
                 {
                     myExperience.map((singleExperience) => (
-                        <div
+                        <div key={singleExperience.id}
                             data-aos-duration="1500" data-aos="zoom-out"
                             className='achievement flex flex-col items-center justify-between py-2' >
                             <div

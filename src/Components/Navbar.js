@@ -35,11 +35,11 @@ export default function Navbar() {
                 <ul className='w-full h-auto flex flex-row items-center justify-around'>
                     {navigationLinks.map((link) => (
 
-                        <Link spy={true} to={link.linkTo} smooth={true} activeClass="active">
+                        <Link key={link.id} spy={true} to={link.linkTo} smooth={true} activeClass="active">
                             <li
                                 onClick={() => { setNavItem(link.navContextType) }}
                                 className={`${navItem === link.navContextType ? 'bg-lightTeal rounded-bl-2xl rounded-tr-2xl text-[red]' : ""} navLi  `}
-                                key={link.id}
+                                
                             >
                                 {link.title}
                             </li>
