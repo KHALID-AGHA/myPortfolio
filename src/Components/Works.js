@@ -5,7 +5,7 @@ import Buttons from './Shared/Buttons'
 import RightTitle from './Shared/RightTitle'
 import AOS from "aos";
 import "aos/dist/aos.css";
-import KhalidAghaCV from '../KhalidAghaCV.pdf'
+import KhalidAghaCV from '../KhalidAgha_CV.pdf'
 import { useEffect } from 'react'
 
 export default function Works() {
