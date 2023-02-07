@@ -52,8 +52,8 @@ export default function Project() {
                     })
                     .map((card) => (
                         <div
-                        key={card.id}
-                        className="relative w-[30%] md:w-full h-96 flex flex-col items-center justify-between  ">
+                            key={card.id}
+                            className="relative w-[30%] md:w-full h-96 flex flex-col items-center justify-between  ">
                             <div className="group h-3/4 w-full mt-4 py-5 px-5 bg-[transparent] flex flex-row items-center justify-center rounded-2xl ">
 
                                 {/******************************* Tags ********************************* */}
@@ -91,14 +91,14 @@ export default function Project() {
                                  h-auto mb-4 w-full flex flex-col justify-between items-start`
                                 }
                             >
-                                <div className=" flex flex-row justify-start items-center w-full">
+                                <div className=" ">
 
-                                    <a className="" href={card.link} target={"_blank"}>
+                                    <a
+                                        className={`${theme ? "text-heavyBeige" : "text-heavyTeal"} font-bold underline flex flex-row items-center justify-center w-full`}
+                                        href={card.link} target={"_blank"} >
                                         <AiOutlineLink cursor={'pointer'} color={`${theme ? "#F2DEBA" : "#0e5e6f"}`} />
-                                    </a>
-                                    <h1 className={`${theme ? "text-heavyBeige" : "text-heavyTeal"} font-bold underline`}>
                                         {card.title}
-                                    </h1>
+                                    </a>
 
                                 </div>
 

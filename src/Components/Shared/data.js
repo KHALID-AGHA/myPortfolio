@@ -4,6 +4,7 @@ import erp from '../../img/Projects/erp.png'
 import km from '../../img/Projects/km.png'
 import food from '../../img/Projects/food.png'
 import ciel from '../../img/Projects/atelierenciel.png'
+import aiImage from '../../img/Projects/aiImage.png'
 import { BsBack, BsFront } from 'react-icons/bs'
 import { GiSkills } from 'react-icons/gi'
 import { AiOutlineLinkedin, AiOutlineWhatsApp } from 'react-icons/ai'
@@ -36,9 +37,10 @@ export const subfilterNavigation = [
     { id: 1, title: "All Projects", },
     { id: 2, title: "internship", },
     { id: 3, title: "bootcamp", },
-    { id: 4, title: "deployed", },
-    { id: 5, title: "wordpress", },
-    { id: 6, title: "demo", },
+    { id: 4, title: "freelance", },
+    { id: 5, title: "deployed", },
+    { id: 6, title: "wordpress", },
+    { id: 7, title: "demo", },
 ]
 
 
@@ -68,6 +70,10 @@ export const projectCards = [
     {
         id: 6, title: 'Atelierenciel', category: "bootcamp", hosted: 'wordpress', date: 3, link: "https://atelierenciel.com/", description: "Online store sells hand painting (wearable andaccessories) products", Img: ciel,
         tags: [{ id: 1, tag1: "#WordPress" }, { id: 2, tag2: "#E-commerce" }, { id: 3, tag3: "#Codi" }],
+    },
+    {
+        id: 7, title: 'AI-Image', category: "freelance", hosted: 'deployed', date: 3, link: "https://dall-e-generate-image.vercel.app/", description: "Create and share with the community a collection of creative photographs by DALL-E AI.", Img: aiImage,
+        tags: [{ id: 1, tag1: "#OpenAI" }, { id: 2, tag2: "#ChatGPT" }, { id: 3, tag3: "#Freelance" }],
     },
 ]
 
