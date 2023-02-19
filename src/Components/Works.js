@@ -5,7 +5,6 @@ import Buttons from './Shared/Buttons'
 import RightTitle from './Shared/RightTitle'
 import AOS from "aos";
 import "aos/dist/aos.css";
-import KhalidAghaCV from '../KhalidAgha_CV.pdf'
 import { useEffect } from 'react'
 
 export default function Works() {
@@ -30,12 +29,12 @@ export default function Works() {
 
                 <RightTitle Header1={"Work for these"} Header2={"Brands & Clients"}
                     Paragraph1={"I have designed  projects related to web development that gave me the experience needed to work in this field."}
-                    
+
                 />
 
                 <div className='works-CV pt-4 md:w-full md:text-center'>
-                    <a href={KhalidAghaCV} download>
-                        <Buttons Action={"download CV"} />
+                    <a target={'_blank'} rel='noreferrer'  href='https://drive.google.com/file/d/1kFur2OZaa_1vfMVt_Y6h2WLDi80EsOyp/view?usp=sharing'>
+                        <Buttons Action={"Resume"} />
                     </a>
                 </div>
             </div>
@@ -55,7 +54,7 @@ export default function Works() {
                             data-aos-easing="linear"
                             data-aos-duration="1500"
                             className='fourCircle  w-28  h-28  scale-[0.7] rounded-full border-[5px] border-heavyTeal flex flex-row items-center justify-center bg-[white] shadow-lg shadow-heavyTeal'>
-                            <a target={'_blank'} href={'http://www.codi.tech/'}>
+                            <a rel='noreferrer' target={'_blank'}    href={'http://www.codi.tech/'}>
                                 <img src={codi} alt="codi" className='cursor-pointer rounded-full w-full h-full' />
                             </a>
                         </div>
@@ -68,7 +67,7 @@ export default function Works() {
                             data-aos-easing="linear"
                             data-aos-duration="1500"
                             className='fourCircle w-28  h-28  scale-[0.7] rounded-full border-[5px] border-heavyTeal flex flex-row items-center justify-center bg-[white] shadow-lg shadow-heavyTeal'>
-                            <a target={'_blank'} href={'https://das-360.com/'}>
+                            <a target={'_blank'} rel='noreferrer'  href={'https://das-360.com/'}>
                                 <img src={das} alt="das" className='cursor-pointer rounded-full w-full h-full ' />
                             </a>
 
@@ -83,7 +82,7 @@ export default function Works() {
                             data-aos-easing="linear"
                             data-aos-duration="1500"
                             className='fourCircle  w-28  h-28  scale-[0.7] rounded-full border-[5px] border-heavyTeal flex flex-row items-center justify-center bg-[white] shadow-lg shadow-heavyTeal'>
-                            <a target={'_blank'} href={'https://atelierenciel.com/'}>
+                            <a target={'_blank'} rel='noreferrer'  href={'https://atelierenciel.com/'}>
                                 <img src={ciel} alt="ciel" className='cursor-pointer rounded-full w-full h-full' />
                             </a>
                         </div>

@@ -30,7 +30,7 @@ export default function Intro() {
 
                 {/*********************************  Links **********************************/}
                 <section className='w-full py-10 h-1/3 flex flex-row justify-evenly items-center'>
-                    <a target={'_blank'} href='https://www.linkedin.com/in/khalid-agha/'
+                    <a target={'_blank'}  rel='noreferrer'href='https://www.linkedin.com/in/khalid-agha/'
                         className='hover:transform hover:transition-all hover:scale-125' >
                         <AiFillLinkedin
                             color='#0E5E6F' size={50} cursor={'pointer'}
@@ -38,7 +38,7 @@ export default function Intro() {
                         />
                     </a>
 
-                    <a target={'_blank'} href='https://github.com/KhalidAgha-2000'
+                    <a target={'_blank'}  rel='noreferrer'href='https://github.com/KhalidAgha-2000'
                         className='hover:transform hover:transition-all hover:scale-125' >
                         <AiFillGithub
                             data-aos-duration="1500" data-aos="zoom-in"
@@ -46,7 +46,7 @@ export default function Intro() {
                             color='#0E5E6F' size={50} cursor={'pointer'} />
                     </a>
 
-                    <a target={'_blank'} href='https://wa.me/76318263'
+                    <a target={'_blank'}  rel='noreferrer'href='https://wa.me/76318263'
                         className='hover:transform hover:transition-all hover:scale-125' >
                         <AiOutlineWhatsApp
                             data-aos-duration="1500" data-aos="zoom-in"

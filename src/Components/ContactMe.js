@@ -24,7 +24,7 @@ export default function ContactMe() {
         user_email: '',
         user_message: '',
     });
-    const [feedback, setFeedback] = useState({
+    const [setFeedback] = useState({
         user_name: '',
         user_email: '',
         user_message: '',
@@ -82,7 +82,7 @@ export default function ContactMe() {
                         >
 
                             <a href={`${card.linkTo === "mkhalid.k.agha@gmail.com" ? " mailto:mkhalid.k.agha@gmail.com" : card.linkTo}`}
-                                target={'_blank'}>
+                                target={'_blank'} rel='noreferrer'>
                                 <FaExternalLinkAlt
                                     className='absolute top-0 right-0'
                                     color={`${theme ? "#F2DEBA" : "#0e5e6f"}`}
